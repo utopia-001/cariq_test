@@ -3,11 +3,11 @@ Download source code from github
 	git clone https://github.com/royalflash5150/cariq-test.git
 
 
-Start server
 
 Go to directory you cloned.
 
-	cd /lightfeather-demo
+	cd /cariq-test
+  
   
   
 Start docker compose.
