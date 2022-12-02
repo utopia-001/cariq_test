@@ -1,97 +1,105 @@
-Download source code from github
+### How to Run?
 
-	git clone https://github.com/royalflash5150/cariq-test.git
+- Download source code from github
 
+	    git clone https://github.com/royalflash5150/cariq-test.git
 
+- Go to directory you cloned.
 
-Go to directory you cloned.
-
-	cd /cariq-test
+    	cd /cariq-test
   
-  
-  
-Start docker compose.
+- Start docker compose.
 
-	docker compose up
+    	docker compose up
 
 
+### API Specification
 
-API:
+- BaseURL
+        
+        http://localhost:8080
 
-BaseURL: http://localhost:8080
+- Create a wallet.
 
--Create a wallet.
-
-	POST /wallets
-	response: 
+	POST `/wallets`
+	
+	Response:
+	 
 		wallet_id
 		e.g: 195c938b-0e05-4d16-9cff-52f2b073b64a
 
--Make a cash deposit.
+- Make a cash deposit.
 
-	POST /wallets/{wallet_id}/deposit
-	request: 
+ 	POST `/wallets/{wallet_id}/deposit`
+
+	Request: 
+	
 		{
-			"amount": 500
+        "amount": 500
 		}		
 
 	response:
+	
 		"success"
 		
--Retrieve a fare.
+- Retrieve a fare.
 	
-	GET /fare
+	GET `/fare`
+	
 	request: 
+	
 		{
-			"origin": "12th",
-			"destination": "embr"
+        "origin": "12th",
+        "destination": "embr"
 		}
 
 	response:
+
 		{
-			"origin": "12th",
-			"destination": "embr",
-			"fare": 3.85
+        "origin": "12th",
+        "destination": "embr",
+        "fare": 3.85
 		}
 	
--Buy a ticket.
+- Buy a ticket.
 
-	POST /wallets/{wallet_id}/ticket
+	POST `/wallets/{wallet_id}/ticket`
+	
 	request:
+	
 		{
-			"origin": "12th",
-			"destination": "embr"
+        "origin": "12th",
+        "destination": "embr"
 		}
 
 	response:
+
 		{
-			"origin": "12th",
-			"destination": "embr"
+        "origin": "12th",
+        "destination": "embr"
 		}
-		
 
--Retrieve a wallet.
+- Retrieve a wallet.
 
-	GET /wallets/{wallet_id}
+	GET `/wallets/{wallet_id}`
+	
 	response:
+
 		{
-			"balance": 459.10,
-			"tickets": [
-				{
-					"origin": "antc",
-					"destination": "embr"
-				},
-				{
-					"origin": "antc",
-					"destination": "colm"
-				},
-				{
-					"origin": "oakl",
-					"destination": "colm"
-				},
-				{
-					"origin": "oakl",
-					"destination": "ssan"
-				}
-			]
+        "balance": 459.10,
+        "tickets": [
+            {
+                "origin": "antc",
+                "destination": "embr"
+            },
+            {
+                "origin": "antc",
+                "destination": "colm"
+            },
+            {
+                "origin": "oakl",
+                "destination": "colm"
+            },
+            ...
+        ]
 		}
