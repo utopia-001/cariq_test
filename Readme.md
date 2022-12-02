@@ -18,6 +18,8 @@ Start docker compose.
 
 API:
 
+BaseURL: http://localhost:8080
+
 -Create a wallet.
 
 	POST /wallets
