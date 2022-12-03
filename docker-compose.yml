@@ -7,7 +7,7 @@ volumes:
 services:
   cariq-db:
     container_name: cariq_db
-    image: mysql:5.7
+    image: mysql:8-oracle
     ports:
       - "3306:3306"
     volumes:
